@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    <h1>Email Preview</h1>
+    <p>Preview of {{ email_type }} email</p>
+</div>
+
+<div class="card">
+    <a href="/" class="btn btn-secondary" style="margin-bottom: 20px;">← Back to Home</a>
+    
+    <div class="preview-container" style="background: #f8f9fa; padding: 30px; border-radius: 8px;">
+        <div class="preview-header" style="border-bottom: 2px solid #ddd; padding-bottom: 15px; margin-bottom: 20px;">
+            <div class="preview-subject" style="font-size: 18px; font-weight: 600; color: #333;">
+                Subject: {{ subject }}
+            </div>
+        </div>
+        <div class="preview-body" style="line-height: 1.8;">
+            {{ body|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}
